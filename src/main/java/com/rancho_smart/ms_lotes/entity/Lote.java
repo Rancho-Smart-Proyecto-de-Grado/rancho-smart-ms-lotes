@@ -1,9 +1,6 @@
 package com.rancho_smart.ms_lotes.entity;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,19 +15,29 @@ public class Lote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idLote;
 
-    @ElementCollection
-    private List<Long> animalIds;
+    @Column(name = "ID_FINCA")
+    private Long idFinca;
 
     @Column(name = "PROPOSITO")
     private String proposito;
 
+    @Column(name = "AREA")
+    private Long area;
+
+    @Column(name = "COBERTURA")
+    private int cobertura;
+
     public Lote() {
     }
 
-    public Lote(List<Long> animalIds, String proposito) {
-        this.animalIds = animalIds;
+    public Lote(Long idFinca, String proposito, Long area, int cobertura) {
+        this.idFinca = idFinca;
         this.proposito = proposito;
+        this.area = area;
+        this.cobertura = cobertura;
     }
+
+
 
     public Long getIdLote() {
         return idLote;
@@ -40,20 +47,40 @@ public class Lote {
         this.idLote = idLote;
     }
 
-    public List<Long> getAnimalIds() {
-        return animalIds;
-    }
-
-    public void setAnimalIds(List<Long> animalIds) {
-        this.animalIds = animalIds;
-    }
-
     public String getProposito() {
         return proposito;
     }
 
     public void setProposito(String proposito) {
         this.proposito = proposito;
+    }
+
+    public Long getArea() {
+        return area;
+    }
+
+    public void setArea(Long area) {
+        this.area = area;
+    }
+
+    public int getCobertura() {
+        return cobertura;
+    }
+
+    public void setCobertura(int cobertura) {
+        this.cobertura = cobertura;
+    }
+
+
+
+    public Long getIdFinca() {
+        return idFinca;
+    }
+
+
+
+    public void setIdFinca(Long idFinca) {
+        this.idFinca = idFinca;
     }
 
     

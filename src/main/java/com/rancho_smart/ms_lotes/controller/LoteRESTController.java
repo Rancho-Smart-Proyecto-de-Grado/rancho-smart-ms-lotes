@@ -19,7 +19,7 @@ import com.rancho_smart.ms_lotes.entity.Lote;
 import com.rancho_smart.ms_lotes.service.LoteService;
 
 @RestController
-@RequestMapping(path = "/lote")
+@RequestMapping(path = "/lotes")
 public class LoteRESTController {
     @Autowired
     private LoteService loteService;
