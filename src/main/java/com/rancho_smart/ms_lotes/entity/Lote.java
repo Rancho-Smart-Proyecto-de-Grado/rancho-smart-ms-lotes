@@ -19,7 +19,7 @@ public class Lote {
     private Long idFinca;
 
     @Column(name = "PROPOSITO")
-    private String proposito;
+    private Proposito proposito;
 
     @Column(name = "AREA")
     private Long area;
@@ -27,17 +27,19 @@ public class Lote {
     @Column(name = "COBERTURA")
     private int cobertura;
 
+    @Column(name = "FOTO")
+    private byte[] foto;
+    
     public Lote() {
     }
 
-    public Lote(Long idFinca, String proposito, Long area, int cobertura) {
+    public Lote(Long idFinca, Proposito proposito, Long area, int cobertura, byte[] foto) {
         this.idFinca = idFinca;
         this.proposito = proposito;
         this.area = area;
         this.cobertura = cobertura;
+        this.foto = foto;
     }
-
-
 
     public Long getIdLote() {
         return idLote;
@@ -45,14 +47,6 @@ public class Lote {
 
     public void setIdLote(Long idLote) {
         this.idLote = idLote;
-    }
-
-    public String getProposito() {
-        return proposito;
-    }
-
-    public void setProposito(String proposito) {
-        this.proposito = proposito;
     }
 
     public Long getArea() {
@@ -81,6 +75,22 @@ public class Lote {
 
     public void setIdFinca(Long idFinca) {
         this.idFinca = idFinca;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public Proposito getProposito() {
+        return proposito;
+    }
+
+    public void setProposito(Proposito proposito) {
+        this.proposito = proposito;
     }
 
     
