@@ -21,6 +21,7 @@ import com.rancho_smart.ms_lotes.service.LoteService;
 @RestController
 @RequestMapping(path = "/lotes")
 public class LoteRESTController {
+    
     @Autowired
     private LoteService loteService;
 
@@ -28,6 +29,12 @@ public class LoteRESTController {
     public ResponseEntity<List<Lote>> getAllLotes() {
         List<Lote> listado = this.loteService.getLotes();
         return new ResponseEntity<>(listado, HttpStatus.OK);
+    }
+
+    @GetMapping("/fincas/{idFinca}")
+    public ResponseEntity<List<Lote>> getLotesByIdFinca(@PathVariable Long idFinca){
+        List<Lote> lotesByIdFica = this.loteService.getLotesByIdFinca(idFinca);
+        return new ResponseEntity<>(lotesByIdFica, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

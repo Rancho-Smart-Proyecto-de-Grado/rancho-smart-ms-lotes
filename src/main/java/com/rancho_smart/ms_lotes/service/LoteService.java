@@ -11,7 +11,8 @@ import com.rancho_smart.ms_lotes.repository.LoteRepository;
 
 @Service
 public class LoteService {
-        @Autowired
+    
+    @Autowired
     private LoteRepository loteRepository;
 
     public List<Lote> getLotes() {
@@ -20,6 +21,10 @@ public class LoteService {
 
     public Optional<Lote> getLoteById(Long id) {
         return this.loteRepository.findById(id);
+    }
+
+    public List<Lote> getLotesByIdFinca(Long idFinca){
+        return this.loteRepository.findByIdFinca(idFinca);
     }
 
     public Lote saveLote(Lote lote) {
